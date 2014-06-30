@@ -1,4 +1,3 @@
-
 $(document).ready(function(){
 	
 	/*--- Display information modal box ---*/
@@ -36,6 +35,12 @@ $(document).ready(function(){
   		console.log("test "+getuserNum())
   	});
 
+  	$('#userGuess').keyup(function (event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            $('#guessButton').click();
+        };
+
     var temperature = function(randNum,userNum) {
         //figure out difference
         var temp =  Math.abs(randNum - userNum);
@@ -52,11 +57,13 @@ $(document).ready(function(){
                    
          }  
 
+     };
+
     	 //set temp
 
     	 //reset
 
-
+})
 
 
        // if (givennumber >= 1 && givennumber <= 100) {
@@ -77,8 +84,6 @@ $(document).ready(function(){
         //};
     // };
 
-
-
   	// function to tell how hot or cold is it
   	// 50 ice cold, 30 cold, 20 warm, 10 hot, vary hot 
   	//	id="guessButton"
@@ -90,13 +95,7 @@ $(document).ready(function(){
   	// 	$(".overlay").fadeOut(1000);
   	// });
 
-	//update count
+	// update count
 
-	//function difference(n, m){
-   // return Math.abs(n - m)
-}
-
-
-});
-
-
+	// function difference(n, m){
+    // return Math.abs(n - m)
