@@ -15,7 +15,7 @@ $(document).ready(function () {
                 // clear count
                 // set rand number
             };
-
+            
             var randNum = function () {
                 var n = Math.floor(Math.random() * 100);
                 console.log("Random Number is: " + n);
@@ -25,16 +25,18 @@ $(document).ready(function () {
             var getuserNum = function () {
                 var givenmenumber = +$('#userGuess').val();
                 //validate if it is in range
-                console.log(givenmenumber);
+                //console.log(givenmenumber);
                 return givenmenumber;
             };
 
-            randNum();
+           var answer = randNum();
 
             $("#guessButton").click(function () {
-                getuserNum();
+                var guess = getuserNum();
                 event.preventDefault();
-                console.log("test " + getuserNum());
+                //console.log("test " + getuserNum());
+                temperature (answer,guess);
+
             });
 
             $('#userGuess').keyup(function (event) {
@@ -47,7 +49,7 @@ $(document).ready(function () {
             var temperature = function (randNum, userNum) {
                     //figure out difference
                     var temp = Math.abs(randNum - userNum);
-                    console.log(temp);
+                    console.log("difference in temp: " + temp);
 
                     // define temp
                     if (5 < temp && temp <= 10) {
