@@ -36,6 +36,10 @@ $(document).ready(function () {
                 event.preventDefault();
                 //console.log("test " + getuserNum());
                 temperature (answer,guess);
+                //update the count
+                var countup = +$('#count').text();
+                countup ++;
+                $('#count').text(countup);
 
             });
 
@@ -49,15 +53,15 @@ $(document).ready(function () {
             var temperature = function (randNum, userNum) {
                     //figure out difference
                     var temp = Math.abs(randNum - userNum);
-                    console.log("difference in temp: " + temp);
+                    console.log("Difference in temp: " + temp);
 
                     // define temp
                     if (5 < temp && temp <= 10) {
-
+                           $('#feedback').text('Super Warm!');
                     } else if (10 < temp && temp <= 20) {
-
+                           $('#feedback').text('Not That Warm!');
                     } else if (20 < temp && temp <= 30) {
-
+                           $('#feedback').text('Cold!');
                     } else {
 
                     }
