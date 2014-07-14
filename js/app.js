@@ -24,6 +24,7 @@ $(document).ready(function () {
 
             var getuserNum = function () {
                 var givenmenumber = +$('#userGuess').val();
+                //validate if it is in range
                 console.log(givenmenumber);
                 return givenmenumber;
             };
@@ -32,6 +33,7 @@ $(document).ready(function () {
 
             $("#guessButton").click(function () {
                 getuserNum();
+                event.preventDefault();
                 console.log("test " + getuserNum());
             });
 
