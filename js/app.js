@@ -24,6 +24,7 @@ $(document).ready(function () {
 
             var getuserNum = function () {
                 var givenmenumber = +$('#userGuess').val();
+                Math.round(givenmenumber) !== givenmenumber;
                 if (givenmenumber >= 1 && givenmenumber <= 100) {
                     return givenmenumber;
                 } else {
@@ -33,6 +34,7 @@ $(document).ready(function () {
             };
 
            var answer = randNum();
+
             $('.game form').submit(function() {
                 var guess = getuserNum();
                 event.preventDefault();
@@ -42,7 +44,9 @@ $(document).ready(function () {
                 var countup = +$('#count').text();
                 countup ++;
                 $('#count').text(countup);
-                $('#guessList').text(countup);
+                var new_item = $("<li>"+ guess +"</li>" );
+                new_item.appendTo('#guessList');
+                //$('#guessList').text(countup);
 
             });
 
