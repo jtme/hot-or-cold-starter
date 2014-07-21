@@ -13,6 +13,10 @@ $(document).ready(function () {
 
             var newGame = function () {
                 // clear count
+                randNum; 
+                $('#count').text('0');
+                $('#guessList').text('');
+                $('#feedback').text('Make your Guess!');
                 // set rand number
             };
             
@@ -24,7 +28,7 @@ $(document).ready(function () {
 
             var getuserNum = function () {
                 var givenmenumber = +$('#userGuess').val();
-                Math.round(givenmenumber) !== givenmenumber;
+                //Math.round(givenmenumber) = givenmenumber;
                 if (givenmenumber >= 1 && givenmenumber <= 100) {
                     return givenmenumber;
                 } else {
@@ -44,12 +48,16 @@ $(document).ready(function () {
                 var countup = +$('#count').text();
                 countup ++;
                 $('#count').text(countup);
-                var new_item = $("<li>"+ guess +"</li>" );
-                new_item.appendTo('#guessList');
+               //var new_item = $("<li>"+ guess +"</li>" );
+               // new_item.appendTo('#guessList');
+                $( '#guessList' ).append( '<li>' + guess + '</li>' );
                 //$('#guessList').text(countup);
 
             });
 
+            $('#new').click(function() {
+                newGame();
+            });
             //$('#userGuess').keyup(function (event) {
              //   if (event.keyCode == 13) {
              //       event.preventDefault();
