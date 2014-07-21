@@ -37,7 +37,7 @@ $(document).ready(function () {
                 }
                 //console.log(givenmenumber);
             };
-
+                newGame();
            
             $('.game form').submit(function() {
                 var guess = getuserNum();
