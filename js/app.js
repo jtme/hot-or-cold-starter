@@ -10,10 +10,11 @@ $(document).ready(function () {
             $("a.close").click(function () {
                 $(".overlay").fadeOut(1000);
             });
+            var answer;
 
             var newGame = function () {
                 // clear count
-                randNum; 
+                answer = randNum(); 
                 $('#count').text('0');
                 $('#guessList').text('');
                 $('#feedback').text('Make your Guess!');
@@ -37,8 +38,7 @@ $(document).ready(function () {
                 //console.log(givenmenumber);
             };
 
-           var answer = randNum();
-
+           
             $('.game form').submit(function() {
                 var guess = getuserNum();
                 event.preventDefault();
