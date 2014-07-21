@@ -17,7 +17,7 @@ $(document).ready(function () {
                 $('#count').text('0');
                 $('#guessList').text('');
                 $('#feedback').text('Make your Guess!');
-                // set rand number
+                $('#userGuess').val('');
             };
             
             var randNum = function () {
@@ -55,9 +55,10 @@ $(document).ready(function () {
 
             });
 
-            $('#new').click(function() {
+            $('.new').click(function() {
                 newGame();
             });
+
             //$('#userGuess').keyup(function (event) {
              //   if (event.keyCode == 13) {
              //       event.preventDefault();
