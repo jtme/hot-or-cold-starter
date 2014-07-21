@@ -24,10 +24,13 @@ $(document).ready(function () {
 
             var getuserNum = function () {
                 var givenmenumber = +$('#userGuess').val();
-                //validate if it is in range
+                if (givenmenumber >= 1 && givenmenumber <= 100) {
+                    return givenmenumber;
+                } else {
+                    $('#feedback').text('Please guess a number between 1 and 100!');
+                }
                 //console.log(givenmenumber);
-                return givenmenumber;
-            };
+            });
 
            var answer = randNum();
 
@@ -40,6 +43,7 @@ $(document).ready(function () {
                 var countup = +$('#count').text();
                 countup ++;
                 $('#count').text(countup);
+                $('#guessList').text(countup);
 
             });
 
@@ -56,12 +60,17 @@ $(document).ready(function () {
                     console.log("Difference in temp: " + temp);
 
                     // define temp
-                    if (5 < temp && temp <= 10) {
-                           $('#feedback').text('Super Warm!');
-                    } else if (10 < temp && temp <= 20) {
-                           $('#feedback').text('Not That Warm!');
-                    } else if (20 < temp && temp <= 30) {
-                           $('#feedback').text('Cold!');
+                    // check if guess is right. 
+                    if (0 == temp ) {
+                           $('#feedback').text('You Got It!');
+                    } else if (temp <= 10) {
+                           $('#feedback').text('Very Hot!');
+                    } else if (temp <= 20) {
+                           $('#feedback').text('Hot!');
+                    } else if (temp <= 30) {
+                           $('#feedback').text('Cold!');  
+                    } else if (temp <= 50) {
+                           $('#feedback').text('Ice Cold!');       
                     } else {
 
                     }
