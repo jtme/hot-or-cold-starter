@@ -30,11 +30,10 @@ $(document).ready(function () {
                     $('#feedback').text('Please guess a number between 1 and 100!');
                 }
                 //console.log(givenmenumber);
-            });
+            };
 
            var answer = randNum();
-
-            $("#guessButton").click(function () {
+            $('.game form').submit(function() {
                 var guess = getuserNum();
                 event.preventDefault();
                 //console.log("test " + getuserNum());
@@ -47,12 +46,12 @@ $(document).ready(function () {
 
             });
 
-            $('#userGuess').keyup(function (event) {
-                if (event.keyCode == 13) {
-                    event.preventDefault();
-                    $('#guessButton').click();
-                }
-            });
+            //$('#userGuess').keyup(function (event) {
+             //   if (event.keyCode == 13) {
+             //       event.preventDefault();
+             //       $('#guessButton').click();
+             //  }
+            //});
 
             var temperature = function (randNum, userNum) {
                     //figure out difference
